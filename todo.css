@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+main{
+    height: 100vh;
+    width: 70%;
+    margin: auto;
+    min-width: 300px;
+    padding-top: 100px;
+
+}
+
+.todo-input-parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.todo-input-parent input{
+    width: 70%;
+    margin-right: 10px;
+    height: 40px;
+    border: 2px solid tomato;
+    border-radius: 4px;
+    padding: 0 8px;
+    font-size: 16px;
+}
+
+.todo-input-parent input:focus{
+    outline: none;
+}
+
+.btn{
+    width: 100px;
+    height: 40px;
+    border: 0;
+    border-radius: 4px;
+    background-color: tomato;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(216, 45, 15);
+}
+
+.btn:active{
+    background-color: skyblue;
+}
+
+.todos ul{
+ list-style: none;
+}
+
+.todos h1{
+    text-align: center;
+}
+
+.todos ul li{
+    border: 1px solid gray;
+    margin-top: 10px;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.todos ul li div:first-child{
+    min-width: 150px;
+   font-size: 20px;
+}
+
+@media screen and (max-width: 600px){
+    .todos ul li{
+        justify-content: center;
+        padding: 10px 0;
+
+    }
+        .todos ul li div:first-child{
+            margin-bottom: 10px;
+            margin-right: 20px;
+            text-align: center;
+        }
+}

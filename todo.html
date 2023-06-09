@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoModule">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
+    <title>Document</title>
+</head>
+<body>
+    <main  ng-controller="todoController as t">
+        <div class="todo-input-parent">
+            <input ng-model="t.todoText" />
+            <button class="btn" ng-click="t.addTodo()">Add</button>
+        </div>
+        <div class="todos">
+            <ul ng-if="t.todos && t.todos.length">
+                <li ng-repeat="todo in t.todos">
+                    <div>
+                        <span ng-if="t.editIndex!==$index">{{todo}}</span>
+                        <input ng-if="t.editIndex===$index" ng-model="t.editText" />
+                        
+                    </div>
+                    <div>
+                        <button ng-if="t.editIndex===$index" class="btn" ng-click="t.saveChanges()">Save</button>
+                        <button ng-if="t.editIndex!==$index" class="btn" ng-click="t.editTodo($index, todo)">Edit</button>
+                        <button class="btn" ng-click="t.deleteTodo($index)">Delete</button>
+                    </div>
+                </li>
+            </ul>
+            <h1 ng-if="t.todos && !t.todos.length">No Todos to show</h1>
+
+        </div>
+    </main>
+
+
+</body>
+</html>
